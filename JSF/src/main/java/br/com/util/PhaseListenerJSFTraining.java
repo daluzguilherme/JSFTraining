@@ -14,13 +14,13 @@ public class PhaseListenerJSFTraining implements PhaseListener {
     //antes da fase
     @Override
     public void beforePhase(PhaseEvent fase) {
-        if (fase.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
-            System.out.println("Antes da fase: " + getPhaseId());
+        System.out.println("Antes da fase: "+ fase.getPhaseId());
+        if (fase.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {            
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            FacesContextUtil.setRequestSession(session);
+            FacesContextUtil.setRequestSession(session);            
         }
-    }
+}
     
     //Depois da fase
     @Override
