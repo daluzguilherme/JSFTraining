@@ -6,11 +6,12 @@
     <session-factory name="session">
         
         <!-- CONFIGURAÇÕES DE CONEXÃO COM O BD -->
+        <!--Configurar o banco Mysql com usuario: 'root' e senha: 'root'-->
         
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property><!-- Defino o driver de conexão com o bd -->
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/JSFTraining_db?createDatabaseIfNotExist=true</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.username">root</property> <!--Usuário do banco-->
+        <property name="hibernate.connection.password">root</property> <!--Senha do usuário do banco-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
         
         <!-- HABILITA A EXIBIÇÃO DO SQL GERADO PELO HIBERNATE E FORMATA-O -->
