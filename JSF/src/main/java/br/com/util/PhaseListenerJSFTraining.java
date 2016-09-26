@@ -25,7 +25,7 @@ public class PhaseListenerJSFTraining implements PhaseListener {
     //Depois da fase
     @Override
     public void afterPhase(PhaseEvent fase) {
-        System.out.println("Depois da fase: " + getPhaseId());
+        System.out.println("Depois da fase: " + fase.getPhaseId());
         if (fase.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
             Session session = FacesContextUtil.getRequestSession();
             try {

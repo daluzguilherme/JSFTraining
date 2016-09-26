@@ -51,6 +51,14 @@ public class Cidade implements Serializable{
         this.nome = nome;
     }
 
+    public List<Endereco> getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(List<Endereco> endereco) {
+        this.endereco = endereco;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
