@@ -2,16 +2,14 @@ package br.com.model.dao;
 
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
 
-/**
- *
- * @author guilherme
- */
-public class HibernateDAO<T> implements InterfaceDAO<T>, Serializable{
+public class HibernateDAO<T> implements InterfaceDAO<T>, Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     private Class<T> classe;
     private Session session;
 
@@ -20,7 +18,6 @@ public class HibernateDAO<T> implements InterfaceDAO<T>, Serializable{
         this.classe = classe;
         this.session = session;
     }
-    
     
     
     @Override
@@ -55,15 +52,22 @@ public class HibernateDAO<T> implements InterfaceDAO<T>, Serializable{
         return entity;
     }
 
+        
     @Override
-    public List<T> getEntities() {
-        List<T> entities = (List<T>) session.createCriteria(classe).list();
-        return entities;
+    public T getEntityByHQLQuery(String stringQuery) {
+        Query query = session.createQuery(stringQuery);        
+        return (T) query.uniqueResult();
     }
 
     @Override
     public List<T> getListByDetachedCriteria(DetachedCriteria criteria) {
         return criteria.getExecutableCriteria(session).list();
     }
+    
+    @Override
+    public List<T> getEntities() {
+        List<T> enties = (List<T>) session.createCriteria(classe).list();
+        return enties;
+    }    
     
 }
