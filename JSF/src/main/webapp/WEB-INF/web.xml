@@ -17,13 +17,13 @@
     <!--    Configuração do tema do primefaces-->
     <dependency>
         <groupID>org.primefaces.themes</groupID>
-        <artifactID>sam</artifactID>
-        <!--<version>1.0.4</version>-->
+        <artifactID>south-street</artifactID>
+        <version>1.0.4</version>
     </dependency>
     
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>sam</param-value>
+        <param-value>south-street</param-value>
     </context-param>
     
     <!--    Configurações do JSF-->
