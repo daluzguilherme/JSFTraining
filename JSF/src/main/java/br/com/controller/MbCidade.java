@@ -33,7 +33,7 @@ public class MbCidade implements Serializable{
     }
     
     public String editCidade() {
-        return "/restrict/cadastrarCidade.faces";
+        return "/restrict/cadastrarcidade.faces";
     }
     
     public String addCidade() {
@@ -58,7 +58,7 @@ public class MbCidade implements Serializable{
 
     public String limpCidade() {
         cidade = new Cidade();
-        return "/restrict/cadastrarCidade.faces";
+        return editCidade();
     }
     
     public void deleteCidade() {

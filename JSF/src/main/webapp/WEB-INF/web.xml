@@ -17,7 +17,7 @@
     <!--    Configuração do tema do primefaces-->    
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>south-street</param-value>
+        <param-value>sam</param-value>
     </context-param>
     
     <!--    Configurações do JSF-->
