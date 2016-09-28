@@ -14,13 +14,7 @@
         <session-timeout>30</session-timeout>
     </session-config>
     
-    <!--    Configuração do tema do primefaces-->
-    <dependency>
-        <groupID>org.primefaces.themes</groupID>
-        <artifactID>south-street</artifactID>
-        <version>1.0.4</version>
-    </dependency>
-    
+    <!--    Configuração do tema do primefaces-->    
     <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>south-street</param-value>
