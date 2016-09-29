@@ -54,6 +54,19 @@
                                              required="true" requiredMessage="O campo [Data de Nascimento] é obrigatório"
                                              locale="pt_BR" navigator="true" effect="explode" pattern="dd/mm/yyyy"/>
                                 
+                                <h:outputLabel for="usuario" value="Nome de usuário:"/>
+                                <p:inputText id="usuario" value="#{mbPessoa.pessoa.login}" size="25"/>
+                                
+                                <h:outputLabel for="senha" value="Senha:" />
+                                <p:password id="senha" size="30" maxlength="22" promptLabel="Digite sua Senha" value="#{mbPessoa.confereSenha}"
+                                            weakLabel="Senha Fraca" goodLabel="Senha Boa" strongLabel="Senha Forte" feedback="true"/> 
+
+                                <h:outputLabel for="senhaconf2" value="Confirmar Senha:"/>
+                                <p:password id="senhaconf2" size="30" value="#{mbPessoa.pessoa.senha}" maxlength="22"   
+                                            promptLabel="Confirme sua Senha" weakLabel="Senha Fraca" validator="passwordValidator"
+                                            goodLabel="Senha Boa" strongLabel="Senha Forte" feedback="true">
+                                </p:password>
+                                
                                 
                                 
                             </h:panelGrid>
