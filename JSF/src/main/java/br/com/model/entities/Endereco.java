@@ -28,9 +28,9 @@ public class Endereco implements Serializable{
     @Column(name="IdEndereco", nullable = false)
     private Integer idEndereco;
     @Column(name="Bairro", length=80)
-    private String bairo;
-    @Column(name="NomeLogradouro", length=80)
     private String bairro;
+    @Column(name="NomeLogradouro", length=80)
+    private String nomeLogradouro;
     @Column(name="CEP", length=9)
     private String cep;
     @Column(name="Numero", length=9)
@@ -104,20 +104,12 @@ public class Endereco implements Serializable{
         this.idEndereco = idEndereco;
     }
 
-    public String getBairo() {
-        return bairo;
-    }
-
-    public void setBairo(String bairo) {
-        this.bairo = bairo;
-    }
-
     public String getBairro() {
         return bairro;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setBairro(String bairo) {
+        this.bairro = bairo;
     }
 
     public String getCep() {
@@ -150,6 +142,14 @@ public class Endereco implements Serializable{
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
+    }
+
+    public String getNomeLogradouro() {
+        return nomeLogradouro;
+    }
+
+    public void setNomeLogradouro(String nomeLogradouro) {
+        this.nomeLogradouro = nomeLogradouro;
     }
 
     public TipoLogradouro getTipologradouro() {
