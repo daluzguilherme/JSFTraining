@@ -1,9 +1,12 @@
 package br.com.support;
 
 import br.com.model.entities.Pessoa;
+import br.com.util.FacesContextUtil;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,10 +28,21 @@ public class BbUsuarioLogado implements Serializable{
         if(context instanceof SecurityContext){
             Authentication authentication = context.getAuthentication();
             if(authentication instanceof Authentication) {
-                usuario.setLogin(authentication.getPrincipal().getUserName());
+                usuario.setLogin(((User) authentication.getPrincipal()).getUsername());
             }
         }
     }
     
+    public Pessoa procuraPessoa() {
+        String login = getLoginUsuarioLogado();
+        Session session = FacesContextUtil.getRequestSession();
+        Query query = session.createQuery("from Pessoa user where user.login like ?");
+        query.setString(0, login);
+        return (Pessoa) query.uniqueResult();
+    }
+
+    private String getLoginUsuarioLogado() {
+        return usuario.getLogin();
+    }
     
 }
