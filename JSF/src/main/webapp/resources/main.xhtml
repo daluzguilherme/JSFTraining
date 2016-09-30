@@ -18,9 +18,20 @@
     <h:body>
 
         <div id="topo">
-            <a href="http://www.semeru.com.br/"><div id="logotipo"></div></a>
-            <img src="/resources/restrict/images/topo.png" />
-        </div>  
+            <a href="http://www.semeru.com.br/"><div id="logotipo"></div></a>            
+                        
+            <div id="logoff">
+                <h:form>
+                    <br/>
+                    <h5><h:outputText value="SEJA BEM VINDO(A) #{facesContext.getCurrentInstance().getExternalContext().getUserPrincipal().name}!"/></h5>
+                    <br/>
+                    <a href="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout">
+	                <h4>LOGOFF</h4>
+	            </a>
+
+                </h:form>
+            </div>
+        </div>
 
         <div id="menu"><!-- Menu ########################################## Menu-->
             <h:form>    
