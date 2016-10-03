@@ -62,6 +62,18 @@
                     <p:commandButton value="Cancelar" action="#{mbPessoa.limpPessoa}" image="ui-icon ui-icon-close"
                                 update="@form"/>
                     
+                    <p:commandButton action="#{mbPessoa.deletePessoa}"
+                            value="Excluir" image="ui-icon ui-icon-trash"
+                            update="@form" ajax="false">
+                        <f:setPropertyActionListener value="#{pessoa}" target="#{mbPessoa.pessoa}"/>
+                        <f:setPropertyActionListener value="#{pessoa.idPessoa}" target="#{mbPessoa.pessoa.idPessoa}"/>
+                        <f:setPropertyActionListener value="#{pessoa.endereco}" target="#{mbPessoa.endereco}"/>
+                        <f:setPropertyActionListener value="#{pessoa.endereco.estado.idEstado}" target="#{mbPessoa.endereco.estado.idEstado}"/>                        
+                        <f:setPropertyActionListener value="#{pessoa.endereco.cidade.idCidade}" target="#{mbPessoa.endereco.cidade.idCidade}"/>
+                        <f:setPropertyActionListener value="#{pessoa.endereco.tipoendereco.idTipoEndereco}" target="#{mbPessoa.endereco.tipoendereco.idTipoEndereco}"/>
+                        <f:setPropertyActionListener value="#{pessoa.endereco.tipologradouro.idTipoLogradouro}" target="#{mbPessoa.endereco.tipologradouro.idTipoLogradouro}"/>
+                    </p:commandButton>
+                    
                 </p:column>
             </p:dataTable> 
         </h:form>

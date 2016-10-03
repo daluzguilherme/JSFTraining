@@ -90,12 +90,17 @@ public class MbPessoa implements Serializable{
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravação efetuada com sucesso", ""));
     }
     
-    public String deletePessoa() {
+    public void deletePessoa() {
+        System.out.println("Apagando pessoa");
         pessoaDAO().remove(pessoa);
+        System.out.println("Pessoa apagada");
+    	System.out.println("Apagando endereço");
         enderecoDAO().remove(endereco);
+        System.out.println("Endereço apagado");
+
+        
         FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro excluido com sucesso", ""));
-        return null;
     }
 
     public List<Pessoa> getPessoas() {
